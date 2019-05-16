@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:WordSuggestion" x:Class="WordSuggestion.MainPage">
+    <StackLayout Margin="10,40,10,0">
+        <!-- Place new controls here -->
+        <!--==<Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" /> -->
+        
+        <Entry HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               Text="Type Here                   "
+               x:Name="textEntry"
+               TextChanged="Handle_TextChanged"
+               Focused="Handle_Focused"
+               IsTextPredictionEnabled="true"/>
+        
+        <ListView Header="suggestions"
+                  x:Name="filesView"
+                  VerticalOptions="Fill"
+                  HorizontalOptions="Fill">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                      
+                            <Label Text="{Binding}" VerticalTextAlignment="Center" FontSize="Small" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+            
+         
+    </StackLayout>
+</ContentPage>
